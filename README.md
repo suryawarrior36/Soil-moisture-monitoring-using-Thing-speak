@@ -61,11 +61,44 @@ Automatically act on your data and communicate using third-party services like T
 
 
 # PROGRAM:
-
+```
+#define in1 6
+#define in2 7
+#define button 4
+int rotDirection = 0;
+int pressed = false;
+int bs;
+void setup() {
+  
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(button, INPUT);
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+}
+void loop() {
+   
+  bs=digitalRead(button);
+  if (bs==1) {
+    digitalWrite(in1, HIGH);
+    digitalWrite(in2, LOW);
+    
+    delay(20);
+  }
+  else if(bs==0)  {
+     digitalWrite(in1, LOW);
+    digitalWrite(in2, HIGH);
+    delay(20);
+        
+  }
+  
+}
+```
 # CIRCUIT DIAGRAM:
+![image](https://github.com/VarshaAjith1110/Soil-moisture-monitoring-using-Thing-speak/assets/94222288/682152ab-fe72-4a38-ac42-56b033a49a4e)
 
 # OUTPUT:
+![image](https://github.com/VarshaAjith1110/Soil-moisture-monitoring-using-Thing-speak/assets/94222288/5d8a0070-a1fe-4bf8-9b6f-6e74c5f1b5b7)
 
 # RESULT:
 Thus the soil moisture sensor values are uploaded in the Thing speak using ESP32 controller.
-
